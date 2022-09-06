@@ -20,7 +20,7 @@ export default function Launches (props: ILaunchesProps) {
     dispatch(fetchAllLaunches())
   },[])
   if(launches.status==='loading'){
-    return <Box sx={{width:'100vw', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+    return <Box sx={{width:'100%', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
       <CircularProgress/>
     </Box>
   }

@@ -2,6 +2,16 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 import { fetchLaunches } from './launchesAPI';
 
+interface rocket{
+        rocket_id:string,
+        rocket_name:string,
+}
+interface launchSite{
+    site_id:string,
+    site_name:string,
+    site_name_long:string
+}
+
 export interface LaunchesFetchModel {
     flight_number: number,
     launch_year: string,
@@ -9,8 +19,8 @@ export interface LaunchesFetchModel {
     launch_date_utc: string,
     launch_date_local: string,
     mission_name: string,
-    rocket: {},
-    launch_site: {},
+    rocket: rocket,
+    launch_site: launchSite,
     launch_success: boolean
   }
 
