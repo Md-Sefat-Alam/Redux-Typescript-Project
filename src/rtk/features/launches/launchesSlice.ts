@@ -66,6 +66,4 @@ export const launchesSlice = createSlice({
 });
 
 
-export const selectLaunches = (state: RootState) => state.launches;
-
 export default launchesSlice.reducer;

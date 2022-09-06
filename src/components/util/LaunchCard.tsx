@@ -4,6 +4,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardTextGroup from './CardTextGroup';
 import { LaunchesFetchModel } from '../../rtk/features/launches/launchesSlice';
+import {useNavigate} from 'react-router-dom'
 
 
 export interface ILaunchesCardProps {
@@ -11,10 +12,16 @@ export interface ILaunchesCardProps {
 }
 
 export default function LaunchCard(props: ILaunchesCardProps) {
+  const navigate=useNavigate()
   const { launch } = props;
   const { flight_number, launch_date_local, launch_site, launch_success, mission_name, rocket } = launch;
+
+  const handleClick = (n:number) =>{
+    navigate('/launch/'+n)
+  }
+  
   return (
-    <Card sx={{ maxWidth: 275 }}>
+    <Card onClick={()=>handleClick(flight_number)} sx={{ maxWidth: 275, cursor: 'pointer' }}>
       <CardContent>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', marginBottom: '15px' }} >
           <CardTextGroup title='Flight' text={flight_number.toLocaleString()} />

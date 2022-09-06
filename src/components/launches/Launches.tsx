@@ -18,7 +18,7 @@ export default function Launches (props: ILaunchesProps) {
   
   React.useEffect(()=>{
     dispatch(fetchAllLaunches())
-  },[])
+  },[dispatch])
   if(launches.status==='loading'){
     return <Box sx={{width:'100%', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
       <CircularProgress/>
