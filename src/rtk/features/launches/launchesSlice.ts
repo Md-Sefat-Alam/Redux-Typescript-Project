@@ -21,7 +21,8 @@ export interface LaunchesFetchModel {
     mission_name: string,
     rocket: rocket,
     launch_site: launchSite,
-    launch_success: boolean
+    launch_success: boolean,
+    upcoming:boolean,
   }
 
 export interface LaunchesState {
@@ -65,5 +66,7 @@ export const launchesSlice = createSlice({
     },
 });
 
+
+export const selectLaunches = (state: RootState) => state.launches;
 
 export default launchesSlice.reducer;

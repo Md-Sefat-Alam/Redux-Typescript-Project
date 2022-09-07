@@ -17,7 +17,7 @@ export default function Launch(props: ILaunchProps) {
     if (flight_number !== undefined) {
       dispatch(fetchALaunch(flight_number))
     }
-  }, [flight_number])
+  }, [flight_number, dispatch])
   return (
     <Container maxWidth={'xl'}>
       {flight_number}
