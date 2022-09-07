@@ -10,6 +10,20 @@ interface launchSite {
     site_name: string,
     site_name_long: string
 }
+interface linksModel {
+    mission_patch: string | null,
+    mission_patch_small: string | null,
+    reddit_campaign: string | null,
+    reddit_launch: string | null,
+    reddit_recovery: string | null,
+    reddit_media: string | null,
+    presskit: string | null,
+    article_link: string | null,
+    wikipedia: string | null,
+    video_link: string | null,
+    youtube_id: string | null,
+    flickr_images: []
+}
 
 export interface LaunchesFetchModel {
     flight_number: number,
@@ -21,7 +35,8 @@ export interface LaunchesFetchModel {
     rocket: rocket,
     launch_site: launchSite,
     launch_success: boolean,
-
+    details: string,
+    links: linksModel
 }
 
 export interface LaunchesState {
@@ -48,6 +63,21 @@ const initialState: LaunchesState = {
         rocket: {
             rocket_id: '',
             rocket_name: ""
+        },
+        details: '',
+        links: {
+            mission_patch: null,
+            mission_patch_small: null,
+            reddit_campaign: null,
+            reddit_launch: null,
+            reddit_recovery: null,
+            reddit_media: null,
+            presskit: null,
+            article_link: null,
+            wikipedia: null,
+            video_link: null,
+            youtube_id: null,
+            flickr_images: []
         }
     },
 };
