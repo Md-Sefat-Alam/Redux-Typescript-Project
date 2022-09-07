@@ -97,7 +97,8 @@ export default function Filters(props: IFiltersProps) {
                             <MenuItem value={"all"}>All</MenuItem>
                             <MenuItem value={'lastWeek'}>Last Week</MenuItem>
                             <MenuItem value={'lastMonth'}>Last Month</MenuItem>
-                            <MenuItem value={'lastYear'}>Last Year</MenuItem>
+                            <MenuItem value={'lastYear'}>Last Two Years</MenuItem>
+                            {/* last year don't have any data for that lastTwo year data will show */}
                         </Select>
                     </FormControl>
                 </Box>

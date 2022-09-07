@@ -54,8 +54,8 @@ export default function Launches(props: ILaunchesProps) {
                 } else return;
               case 'lastYear':
                 const todayDateForYear = new Date()
-                const startDayOfPrevYear = moment(todayDateForYear).subtract(1, 'month').startOf('month').format('LLLL')
-                const lastDayOfPrevYear = moment(todayDateForYear).subtract(1, 'month').endOf('month').format('LLLL')
+                const startDayOfPrevYear = moment(todayDateForYear).subtract(2, 'year').startOf('year').format('LLLL')
+                const lastDayOfPrevYear = moment(todayDateForYear).subtract(1, 'year').endOf('year').format('LLLL')
                 if (moment(f.launch_date_utc).isBetween(startDayOfPrevYear, lastDayOfPrevYear)) {
                   return f;
                 } else return;

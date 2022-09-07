@@ -29,7 +29,6 @@ export default function ImageView() {
                         ))}
                     </Masonry>
                 </Box>
-
             </Box>:"No Image Found"}
         </>
     );

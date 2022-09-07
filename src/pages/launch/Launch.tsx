@@ -30,12 +30,12 @@ export default function Launch(props: ILaunchProps) {
   }
   console.log(launch.value)
   return (
-    <Container maxWidth={'xl'} sx={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '25px' }}>
+    <Container maxWidth={'xl'} sx={{ marginTop: '40px', display: 'flex', flexDirection: 'column', gap: '25px' }}>
       <Box sx={{ position: 'relative', border: '1px solid lightgray', borderRadius: '10px', minHeight: '300px', padding: '10px' }}>
         <Typography component="p" sx={{ position: 'absolute', top: '-13px', backgroundColor: 'white' }}>Flight Informations</Typography>
-        <Avatar src='https://images2.imgbox.com/63/c5/0OIpD59z_o.png' sx={{ bgcolor: deepOrange[500], position: 'absolute', top: '5px', right: '5px', borderRadius: "10px", minWidth: '200px', minHeight: '200px' }} variant="square">
+        {links.mission_patch_small && <Avatar src={links.mission_patch_small ? links.mission_patch_small : ''} sx={{ bgcolor: links.mission_patch_small ? "white" : deepOrange[500], position: 'absolute', top: '5px', right: '5px', borderRadius: "10px", minWidth: '200px', minHeight: '200px' }} variant="square">
           Not Found
-        </Avatar>
+        </Avatar>}
         <Box sx={{ marginTop: '20px' }}>
           <CardTextGroup title='Date:' text={new Date(launch_date_local).toLocaleDateString()} />
           <CardTextGroup title='Flight Id:' text={"" + flight_number} />
@@ -62,7 +62,7 @@ export default function Launch(props: ILaunchProps) {
       <Box sx={{ position: 'relative', border: '1px solid lightgray', borderRadius: '10px', minHeight: '300px', padding: '10px', }}>
         <Typography component="p" sx={{ position: 'absolute', top: '-13px', backgroundColor: 'white' }}>Images</Typography>
         <Box>
-          <ImageView/>
+          <ImageView />
         </Box>
       </Box>
     </Container>

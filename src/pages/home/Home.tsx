@@ -8,7 +8,7 @@ export interface IHomeProps {
 
 export default function Home (props: IHomeProps) {
   return (
-    <Container maxWidth={'xl'}>
+    <Container sx={{marginTop: '30px'}} maxWidth={'xl'}>
       <Filters/>
       <Launches/>
     </Container>
