@@ -30,7 +30,7 @@ export default function Launches(props: ILaunchesProps) {
   }
 
   return (
-    <Grid container rowSpacing={2} gap={'15px'} columnSpacing={{ xs: 1, sm: 2, md: 3, }}>
+    <Grid container rowSpacing={{xs: 2, sm: 3, md: 6}} gap={'15px'} columnSpacing={{ xs: 2, sm: 3, md: 6, }}>
       {
         launches.value
           .filter(f => f.rocket.rocket_name.toLocaleLowerCase().includes(filters.search.toLocaleLowerCase()))
@@ -82,7 +82,7 @@ export default function Launches(props: ILaunchesProps) {
               return f;
             }
           })
-          .map((launch, index) => <Grid key={index} item xs={2}><LaunchCard launch={launch} /></Grid>)
+          .map((launch, index) => <Grid key={index} item xs={8} sm={4} md={3} xl={2} sx={{alignItems:'center'}}><LaunchCard launch={launch} /></Grid>)
       }
     </Grid>
   );
